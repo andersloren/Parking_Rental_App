@@ -25,6 +25,7 @@ public class ParkingLot {
     public ParkingSpot getParkingSpotBySpotNumber(int spotNumber) {
         return parkingSpotMap.get(spotNumber);
     }
+
     public void displayParkingSpot() {
         System.out.println("----------------------");
         int counter = 0;

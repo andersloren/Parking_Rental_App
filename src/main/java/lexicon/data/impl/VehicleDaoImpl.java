@@ -10,7 +10,9 @@ import java.util.Optional;
 
 public class VehicleDaoImpl implements VehicleDao {
 
-    private List<Vehicle> storage = new ArrayList<>(); // [v1, v2, v3]
+    private List<Vehicle> storage;
+
+    //todo: implement singleton design pattern
 
     public VehicleDaoImpl() {
         storage = new ArrayList<>();
@@ -52,12 +54,7 @@ public class VehicleDaoImpl implements VehicleDao {
     }
 
     @Override
-    public void update(Vehicle toUpdate) { // v1 = abc123, CAR -> abc123, TRUCK
-        // step1: check the method params (parameters)
-        // step2: find vehicle by license plate (Original Data)
-        // step3: if vehicle exist -> find index
-        // step4: replace it in index
-
+    public void update(Vehicle toUpdate) {
         if (toUpdate == null) throw new IllegalArgumentException("Vehicle Data is null");
         Optional<Vehicle> existingVechileOptional = find(toUpdate.getLicensePlate());
         if (existingVechileOptional.isEmpty()) throw new IllegalArgumentException("License Plate not found");
