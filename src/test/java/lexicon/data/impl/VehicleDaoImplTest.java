@@ -1,14 +1,15 @@
 package lexicon.data.impl;
 
-import lexicon.model.Vehicle;
-import lexicon.model.VehicleType;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
+import lexicon.data.impl.VehicleDaoImpl;
+import lexicon.model.Vehicle;
+import lexicon.model.VehicleType;
 
 import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class VehicleDaoImplTest {
 
@@ -29,7 +30,7 @@ class VehicleDaoImplTest {
 
     @Test
     public void testCreateExistingVehicle() {
-        Vehicle createdVehicle = testObject.create(vehicle);
+        testObject.create(vehicle);
 
         assertThrows(IllegalArgumentException.class,
                 () -> testObject.create(vehicle)
