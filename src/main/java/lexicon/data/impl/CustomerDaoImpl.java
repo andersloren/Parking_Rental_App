@@ -14,11 +14,7 @@ public class CustomerDaoImpl implements CustomerDao {
     // Fields
     private List<Customer> storage;
 
-    // Singleton Design Pattern
-    // Create an object of SingleObject
     private static CustomerDaoImpl instance;
-
-    // make the constructor private so that this class cannot be instantiated
     private CustomerDaoImpl() {
         storage = new ArrayList<>();
     }
